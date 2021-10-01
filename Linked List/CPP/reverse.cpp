@@ -9,17 +9,14 @@ class Node{
 
 class NodeOperation{
 public:
-
-	void pushNode(class Node** head_ref,int data_val){
-	
-		class Node *new_node = new Node();
+	void pushNode(Node** head_ref, int data_val){
+		Node *new_node = new Node();
 		new_node->data = data_val;
-		
 		new_node->next = *head_ref;
 		*head_ref = new_node;
 	}
 	
-	void printNode(class Node *head){
+	void printNode(Node *head){
 		while(head != NULL){
 			cout <<head->data << "->";
 			head = head->next;
@@ -43,7 +40,7 @@ Node* reverse(Node* head) {
 int main(){
 	class Node *head = NULL;
 	class NodeOperation *temp = new NodeOperation();
-	for(int i=5; i>0; i--)
+	for(int i = 5; i > 0; i--)
 		temp->pushNode(&head, i);
     temp -> printNode(head);
     cout << "\n";
